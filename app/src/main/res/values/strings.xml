@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Antidepression</string>
-    <string name="backarrow"><![CDATA[<]]></string>
+    <string name="app_name">antidepression</string>
 </resources>

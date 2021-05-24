@@ -4,9 +4,11 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 public class MainActivity extends ListActivity {
 
@@ -56,9 +58,9 @@ public class MainActivity extends ListActivity {
             startActivity(intent);
         };
         getListView().setOnItemClickListener(itemListener);
-//        ImageView img= findViewById(R.id.imageView);
-//        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.main_image);
-//        img.setImageURI(uri);
+        ImageView img = findViewById(R.id.main_img);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.drawable.main);
+        img.setImageURI(uri);
     }
 
     private void loadSettings() {

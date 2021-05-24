@@ -60,7 +60,7 @@ public class NotesActivity extends AppCompatActivity {
         noteList.setAdapter(arrayAdapter);
         adapter.close();
     }
-    // по нажатию на кнопку запускаем NoteActivity для добавления данных
+
     public void add(View view){
         Intent intent = new Intent(this, NoteActivity.class);
         startActivity(intent);

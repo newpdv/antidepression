@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">AntiDepression</string>
+    <string name="app_name">Антидепрессия</string>
     <string name="pleasure_therapy">Терапия удовольствием</string>
     <string name="delete">Удалить</string>
     <string name="remind_later">Напомнить позже</string>
+    <string name="enter_note">Введите мысль</string>
+    <string name="enter_state">Оцените Ваше состояние (1-5)</string>
+    <string name="save">Сохранить</string>
+    <string name="add">Добавить</string>
+    <string name="thought_catalog">Дневник мыслей</string>
 </resources>

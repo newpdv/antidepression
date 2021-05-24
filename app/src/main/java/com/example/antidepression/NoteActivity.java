@@ -49,16 +49,14 @@ public class NoteActivity extends AppCompatActivity {
         if (extras != null) {
             noteId = extras.getLong("id");
         }
-        // если 0, то добавление
+
         if (noteId > 0) {
-            // получаем элемент по id из бд
             adapter.open();
             Note note = adapter.getNote(noteId);
             textBox.setText(note.getText());
             stateBox.setText(String.valueOf(note.getState()));
             adapter.close();
         } else {
-            // скрываем кнопку удаления
             delButton.setVisibility(View.GONE);
         }
     }
@@ -82,15 +80,14 @@ public class NoteActivity extends AppCompatActivity {
         goHome();
     }
 
-    public void delete(View view){
+    public void delete(View view) {
 
         adapter.open();
         adapter.delete(noteId);
         adapter.close();
         goHome();
     }
-    private void goHome(){
-        // переход к главной activity
+    private void goHome() {
         Intent intent = new Intent(this, NotesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);

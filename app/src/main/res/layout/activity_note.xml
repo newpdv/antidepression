@@ -15,13 +15,13 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter note"/>
+            android:hint="@string/enter_note"/>
         <EditText
             android:id="@+id/state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:hint="Enter your state (1-5)"/>
+            android:hint="@string/enter_state"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,14 +32,14 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Save"
+                android:text="@string/save"
                 android:onClick="save"/>
             <Button
                 android:id="@+id/deleteButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:onClick="delete"/>
         </LinearLayout>
     </LinearLayout>

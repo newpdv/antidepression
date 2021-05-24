@@ -5,8 +5,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/colorPrimaryDark</item>
         <item name="colorOnSecondary">@color/colorAccent</item>
-        <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimaryVariantDark</item>
-        <!-- Customize your theme here. -->
+        <item name="actionBarTheme">@style/ThemeOverlay.LightTheme.ActionBar</item>
+    </style>
+
+    <style name="ThemeOverlay.LightTheme.ActionBar" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
     </style>
 </resources>

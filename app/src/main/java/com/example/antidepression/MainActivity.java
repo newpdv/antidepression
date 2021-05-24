@@ -16,7 +16,7 @@ public class MainActivity extends ListActivity {
     public static final String IS_DARK_THEME = "isDarkTheme";
     private SharedPreferences settings;
 
-    String[] activities = {"About depression", "Test", "Advices", "Thought catalog", "Pleasure therapy"};
+    String[] activities = {"Про депрессию", "Тест", "Помощь специалиста", "Дневник мыслей", "Терапия удовольствием"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +36,19 @@ public class MainActivity extends ListActivity {
             String selectedItem = parent.getItemAtPosition(position).toString();
             Intent intent;
             switch (selectedItem) {
-//                case "About depression":
+//                case "Про депрессию":
 //                    intent = new Intent(getApplicationContext(), AboutDepressionActivity.class);
 //                    break;
-//                case "Test":
+//                case "Тест":
 //                    intent = new Intent(getApplicationContext(), TestActivity.class);
 //                    break;
-//                case "Advices":
+//                case "Помощь специалиста":
 //                    intent = new Intent(getApplicationContext(), AdviceScreenSlidePagerActivity.class);
 //                    break;
-                case "Thought catalog":
+                case "Дневник мыслей":
                     intent = new Intent(getApplicationContext(), NotesActivity.class);
                     break;
-                case "Pleasure therapy":
+                case "Терапия удовольствием":
                     intent = new Intent(getApplicationContext(), PleasureActivity.class);
                     break;
                 default:
@@ -59,7 +59,7 @@ public class MainActivity extends ListActivity {
         };
         getListView().setOnItemClickListener(itemListener);
         ImageView img = findViewById(R.id.main_img);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.drawable.main);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.main);
         img.setImageURI(uri);
     }
 

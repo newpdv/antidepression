@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -45,14 +44,14 @@ public class PleasureActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_pleasure);
 
-        pleasureList = (ListView)findViewById(R.id.list);
-        deleteButton = (Button)findViewById(R.id.delete);
-        laterButton = (Button)findViewById(R.id.later);
+        pleasureList = findViewById(R.id.list);
+        deleteButton = findViewById(R.id.delete);
+        laterButton = findViewById(R.id.later);
 
         pleasureList.setOnItemClickListener((parent, view, position, id) -> {
             selectedPleasure = arrayAdapter.getItem(position);
 
-            if(selectedPleasure!=null) {
+            if (selectedPleasure != null) {
                 showButtons();
                 if (selectedView != null) {
                     selectedView.setBackgroundColor(Color.TRANSPARENT);
@@ -87,17 +86,17 @@ public class PleasureActivity extends AppCompatActivity {
         super.onResume();
         refreshList();
     }
+
     // по нажатию на кнопку запускаем PleasureActivity для добавления данных
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void delete(View view){
+    public void delete(View view) {
         DatabasePleasureAdapter adapter = new DatabasePleasureAdapter(this);
         adapter.open();
         adapter.delete(selectedPleasure.getId());
         currentItems.remove(selectedPleasure);
 
         List<Pleasure> pleasures = adapter.getAllPleasure();
-        List<Long> pleasuresIds = pleasures.stream().map(pl -> pl.getId()).filter(pl -> !currentItems.stream().map(s -> s.getId()).anyMatch(t -> t == pl)).collect(Collectors.toList());
-
+        List<Long> pleasuresIds = pleasures.stream().map(Pleasure::getId).filter(pl -> !currentItems.stream().map(Pleasure::getId).anyMatch(t -> t.equals(pl))).collect(Collectors.toList());
 
         adapter.close();
 
@@ -110,15 +109,13 @@ public class PleasureActivity extends AppCompatActivity {
             adapter.open();
             adapter.recreate();
             pleasures = adapter.getAllPleasure();
-            pleasures.subList(0, Integer.min(4, pleasures.size())).forEach(p -> currentItems.add(p));
+            currentItems.addAll(pleasures.subList(0, Integer.min(4, pleasures.size())));
             adapter.close();
             arrayAdapter.notifyDataSetChanged();
-
             return;
         }
 
         arrayAdapter.notifyDataSetChanged();
-
 
         selectedPleasure = null;
         selectedView = null;
@@ -130,27 +127,22 @@ public class PleasureActivity extends AppCompatActivity {
         adapter.open();
 
         Random random = new Random();
-        Integer nextId = random.nextInt(pleasuresIds.size());
+        int nextId = random.nextInt(pleasuresIds.size());
         Pleasure nextPleasure = adapter.getPleasure(pleasuresIds.get(nextId));
 
         currentItems.add(nextPleasure);
         arrayAdapter.notifyDataSetChanged();
         adapter.close();
-
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void remind(View view){
+    public void remind(View view) {
         DatabasePleasureAdapter adapter = new DatabasePleasureAdapter(this);
         adapter.open();
         currentItems.remove(selectedPleasure);
 
         List<Pleasure> pleasures = adapter.getAllPleasure();
-        List<Long> pleasuresIds = pleasures.stream().map(pl -> pl.getId()).filter(pl -> !currentItems.stream().map(s -> s.getId()).anyMatch(t -> t == pl)).collect(Collectors.toList());
-
-
+        List<Long> pleasuresIds = pleasures.stream().map(Pleasure::getId).filter(pl -> !currentItems.stream().map(Pleasure::getId).anyMatch(t -> t.equals(pl))).collect(Collectors.toList());
         adapter.close();
 
         hideButtons();
@@ -160,7 +152,6 @@ public class PleasureActivity extends AppCompatActivity {
 
         arrayAdapter.notifyDataSetChanged();
 
-
         selectedPleasure = null;
         selectedView = null;
 
@@ -169,9 +160,8 @@ public class PleasureActivity extends AppCompatActivity {
         }
         adapter.open();
 
-
         Random random = new Random();
-        Integer nextId = random.nextInt(pleasuresIds.size());
+        int nextId = random.nextInt(pleasuresIds.size());
         Pleasure nextPleasure = adapter.getPleasure(pleasuresIds.get(nextId));
 
         currentItems.add(nextPleasure);

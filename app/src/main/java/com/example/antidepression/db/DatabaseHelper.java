@@ -11,9 +11,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     static final String PLEASURE_TABLE = "pleasure"; // название таблицы в бд
     static final String[] PLEASURE_LIST = new String[]{
-            "Eat sweets from childhood", "Play with children", "Do morning exercises",
-            "Lie on the grass", "Play with friends", "To see a movie", "Visit the theater",
-            "Listen to music", "Start singing"
+            "Съесть что-то вкусное", "Поиграть с питомцем", "Сделать зарядку",
+            "Прогуляться на свежем воздухе", "Встретиться с друзьями", "Посмотреть любимый фильм",
+            "Сходить на концерт", "Послушать любимую музыку", "Найти новое хобби"
     };
 
     // названия столбцов

@@ -25,14 +25,6 @@
                 android:textAlignment="center"
                 android:textSize="32dp" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-150px"
-                android:layout_marginBottom="-200px"
-                app:srcCompat="@drawable/test" />
-
             <TextView
                 android:id="@+id/textViewTestDescription"
                 android:layout_width="match_parent"

@@ -59,7 +59,7 @@ public class TestActivity extends AppCompatActivity {
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 String title;
-                String text;
+                String text = "";
 
                 if (finalSum < 13) {
                     title = "Ответьте на все вопросы";

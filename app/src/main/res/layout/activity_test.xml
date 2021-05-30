@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/basicLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="Тест на депрессию Бека"
+                android:textAlignment="center"
+                android:textSize="32dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-150px"
+                android:layout_marginBottom="-200px"
+                app:srcCompat="@drawable/test" />
+
+            <TextView
+                android:id="@+id/textViewTestDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Тест содержит группы утверждений, отвечающих на вопрос. Внимательно прочтите каждую группу утверждений. Затем определите в каждой группе одно утверждение, которое лучше всего соответствует вашим ощущениям на этой неделе и сегодня. Установите флажок рядом с выбранной выпиской."
+                android:textSize="16dp"
+                android:layout_margin="30px"
+                android:layout_marginTop="0px"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

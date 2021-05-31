@@ -36,9 +36,9 @@ public class MainActivity extends ListActivity {
             String selectedItem = parent.getItemAtPosition(position).toString();
             Intent intent;
             switch (selectedItem) {
-//                case "Про депрессию":
-//                    intent = new Intent(getApplicationContext(), AboutDepressionActivity.class);
-//                    break;
+                case "Про депрессию":
+                    intent = new Intent(getApplicationContext(), AboutDepressionActivity.class);
+                    break;
                 case "Тест":
                     intent = new Intent(getApplicationContext(), TestActivity.class);
                     break;

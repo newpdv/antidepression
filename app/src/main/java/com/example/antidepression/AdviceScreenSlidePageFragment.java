@@ -28,6 +28,8 @@ public class AdviceScreenSlidePageFragment extends Fragment {
                 R.layout.advice_fragment_screen_slide_page, container, false);
         TextView textView = (TextView) (rootView.findViewById(R.id.textView));
         textView.setText(advice);
+        textView.setTextColor(0xFFFFFFFF);
+        textView.setTextSize(26);
 
         ImageView backgroundImage = (ImageView) (rootView.findViewById(R.id.backgound_image));
         FrameLayout parent = (FrameLayout) (rootView.findViewById(R.id.parent));

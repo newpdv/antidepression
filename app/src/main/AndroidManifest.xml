@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/LightTheme">
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".NoteActivity"></activity>
+        <activity android:name=".TestActivity"/>
+        <activity android:name=".NoteActivity"/>
         <activity android:name=".NotesActivity" />
         <activity android:name=".PleasureActivity" />
         <activity android:name=".MainActivity">

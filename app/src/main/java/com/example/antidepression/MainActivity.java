@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 public class MainActivity extends ListActivity {
 
@@ -42,9 +43,9 @@ public class MainActivity extends ListActivity {
                 case "Тест":
                     intent = new Intent(getApplicationContext(), TestActivity.class);
                     break;
-//                case "Помощь специалиста":
-//                    intent = new Intent(getApplicationContext(), AdviceScreenSlidePagerActivity.class);
-//                    break;
+                case "Помощь специалиста":
+                    intent = new Intent(getApplicationContext(), AdviceScreenSlidePagerActivity.class);
+                    break;
                 case "Дневник мыслей":
                     intent = new Intent(getApplicationContext(), NotesActivity.class);
                     break;

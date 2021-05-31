@@ -16,7 +16,7 @@ public class MainActivity extends ListActivity {
     public static final String IS_DARK_THEME = "isDarkTheme";
     private SharedPreferences settings;
 
-    String[] activities = {"Про депрессию", "Тест", "Помощь специалиста", "Дневник мыслей", "Терапия удовольствием"};
+    String[] activities = {"Мотивация", "Тест", "Помощь специалиста", "Дневник мыслей", "Терапия удовольствием"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class MainActivity extends ListActivity {
             String selectedItem = parent.getItemAtPosition(position).toString();
             Intent intent;
             switch (selectedItem) {
-                case "Про депрессию":
+                case "Мотивация":
                     intent = new Intent(getApplicationContext(), AboutDepressionActivity.class);
                     break;
                 case "Тест":
